@@ -22,8 +22,6 @@ interface Match{
 	kills: string
 	deaths: string
 	assists: string
-	screenshot: string
-	vod: string
 }
 
 const ChampionStats:FC<CompProps> = (props:CompProps) => {

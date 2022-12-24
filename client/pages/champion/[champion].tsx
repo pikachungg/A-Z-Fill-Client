@@ -14,8 +14,6 @@ interface Match{
 	kills: string
 	deaths: string
 	assists: string
-	screenshot: string
-	vod: string
 }
 
 interface ChampionInformation{
@@ -35,7 +33,7 @@ const Champion:NextPage = () => {
 	const [championName, setChampionName] = useState<string>("")
 	const [championImg, setChampionImg] = useState<string>("") 
 
-	const [championInformation, setChampionInformation] = useState<ChampionInformation>({championid: "K'Sante", wins: 10, loss: 20, matchhistory: [{date: '12/23/2022', position: 'Support', result: 'Win', kills: '10', deaths: '5', assists: '20', screenshot: 'https://www.google.com/', vod: 'https://www.google.com/'}]})
+	const [championInformation, setChampionInformation] = useState<ChampionInformation>({championid: "K'Sante", wins: 10, loss: 20, matchhistory: [{date: '12/23/2022', position: 'Support', result: 'Win', kills: '10', deaths: '5', assists: '20'}]})
 
 	useEffect( () => {
 		if (router.isReady){

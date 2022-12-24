@@ -14,8 +14,6 @@ interface Match{
 	kills: string
 	deaths: string
 	assists: string
-	screenshot: string
-	vod: string
 }
 
 interface ChampTableInterface{
@@ -26,7 +24,7 @@ const ChampionTable:FC<ChampTableInterface> = (props: ChampTableInterface) => {
 	const tableHeaders = ["Date", "Position", "Result", "Kills", "Deaths", "Assists"]
 
 	return(
-		<table className='table-auto w-full mt-10'>
+		<table className='table-auto w-full'>
 			<thead className='text-xs  uppercase  bg-gray-700 text-gray-400'>
 				<tr>
 				{
@@ -42,7 +40,7 @@ const ChampionTable:FC<ChampTableInterface> = (props: ChampTableInterface) => {
 						<tr className='bg-white border-b dark:bg-gray-800 dark:border-gray-700' key={index}>
 							{
 								Object.keys(match).map( (k,index) => (
-									<td className='py-4 px-6 text-slate-300' key={index}>{match[k as keyof typeof match]}</td>
+									<td className='py-4 px-6 text-slate-300 text-center' key={index}>{match[k as keyof typeof match]}</td>
 								))
 							}
 						</tr>
