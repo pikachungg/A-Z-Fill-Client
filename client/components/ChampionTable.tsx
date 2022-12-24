@@ -23,7 +23,7 @@ interface ChampTableInterface{
 }
 
 const ChampionTable:FC<ChampTableInterface> = (props: ChampTableInterface) => {
-	const tableHeaders = ["Date", "Position", "Result", "Kills", "Deaths", "Assists", "Screenshot", "VOD"]
+	const tableHeaders = ["Date", "Position", "Result", "Kills", "Deaths", "Assists"]
 
 	return(
 		<table className='table-auto w-full mt-10'>
