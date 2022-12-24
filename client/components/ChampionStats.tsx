@@ -50,14 +50,13 @@ const ChampionStats:FC<CompProps> = (props:CompProps) => {
 		}
 		return(<p className={styles}>{val}</p>)
 	}
-
+	
 	return (
 		<div className='flex mt-10 m-auto bg-slate-700'>
 			<Image src={props.img} alt={`Image for champion ${props.name}`} width={100} height={100}/>
-
 			<div className='block ml-5'>
-				<Link href={`https://leagueoflegends.fandom.com/wiki/${props.name.replace(" ", "_")}/LoL`} target="_blank">
-					<h1 className='text-2xl text-green-300 font-semibold'>{props.name}</h1>
+				<Link className='text-2xl text-green-300 font-semibold ease-in-out transition-all duration-500 hover:text-green-400' href={`https://leagueoflegends.fandom.com/wiki/${props.name.replace(" ", "_")}/LoL`} target="_blank">
+					<h1>{props.name}</h1>
 				</Link>
 				<div className='flex mt-3'>
 					{

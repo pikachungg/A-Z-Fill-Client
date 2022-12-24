@@ -27,7 +27,7 @@ const About:NextPage = () => {
 						</ul>
 					</div>
 					<hr className='m-8 h-px  border-0 bg-gray-700'/>
-					<Link href="/" className='text-xl font-semibold text-green-300 hover:text-green-300 ease-in-out transition-all duration-300'>Go Back!</Link>
+					<Link href="/" className='text-xl font-semibold text-green-300 hover:text-green-400 ease-in-out transition-all duration-300'>Go Back!</Link>
 				</div>
 			</main>
 		</>

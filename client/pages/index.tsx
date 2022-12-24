@@ -24,7 +24,7 @@ const Home:NextPage = () => {
 				<div className='grid place-content-center min-h-screen'>
 					<h1 className='font-bold text-4xl text-slate-200 text-center'>Shapeless</h1>
 					<Link href="/about" className='font-bold text-5xl text-green-300 mt-4 ease-in-out transition-all duration-500 hover:text-green-400'>A to Z Fill Challenge</Link>
-					<button onClick={redirectStats} className='mt-10 font-semibold bg-green-300 w-3/5 m-auto h-8 rounded text-gray-900 hover:bg-green-400'>See Stats</button>
+					<button onClick={redirectStats} className='mt-10 font-semibold bg-green-300 w-3/5 m-auto h-8 rounded text-gray-900 ease-in-out transition-all duration-500 hover:bg-green-400'>See Stats</button>
 				</div>
 			</main>
 		</div>

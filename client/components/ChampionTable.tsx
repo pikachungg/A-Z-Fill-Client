@@ -25,7 +25,6 @@ interface ChampTableInterface{
 const ChampionTable:FC<ChampTableInterface> = (props: ChampTableInterface) => {
 	const tableHeaders = ["Date", "Position", "Result", "Kills", "Deaths", "Assists", "Screenshot", "VOD"]
 
-
 	return(
 		<table className='table-auto w-full mt-10'>
 			<thead className='text-xs  uppercase  bg-gray-700 text-gray-400'>
