@@ -41,8 +41,8 @@ const ChampionTable:FC<ChampTableInterface> = (props: ChampTableInterface) => {
 					props.champinfo.matchhistory.map( (match, index) => (
 						<tr className='bg-white border-b dark:bg-gray-800 dark:border-gray-700' key={index}>
 							{
-								Object.keys(match).map( (k) => (
-									<td className='py-4 px-6 text-slate-300'>{match[k as keyof typeof match]}</td>
+								Object.keys(match).map( (k,index) => (
+									<td className='py-4 px-6 text-slate-300' key={index}>{match[k as keyof typeof match]}</td>
 								))
 							}
 						</tr>
