@@ -16,7 +16,7 @@ const ChampionPool:FC = () => {
 	useEffect( () => {
 		getCurrentPatch()
 		getChampions()
-	},[])
+	},[currentPatch])
 
 	const getCurrentPatch = ():void => {
 		axios.get('https://ddragon.leagueoflegends.com/api/versions.json')
