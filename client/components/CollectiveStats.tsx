@@ -35,11 +35,11 @@ const CollectiveStats:FC = () => {
 	}
 
 	return(
-		<div className='grid grid-cols-4 w-2/5 pb-5'>
+		<div className='grid grid-cols-4 md:w-4/5 lg:w-3/5 pb-5'>
 			{
 				trackingStats.map( (statName, index) => (
 					<div key={index}>
-						<h1 className='text-green-300 font-semibold text-lg text-center'>{statName}</h1>
+						<h1 className='text-green-300 md:font-semibold md:text-lg text-center'>{statName}</h1>
 						{getStat(index)}
 					</div>
 				))

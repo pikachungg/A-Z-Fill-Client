@@ -11,8 +11,8 @@ const About:NextPage = () => {
 			</Head>
 			<main className='bg-gray-900 w-screen h-screen'>
 				<NavBar/>
-				<div className='w-2/5 m-auto'>
-					<h1 className='text-5xl text-green-300 font-semibold text-center p-10'>About & Rules</h1>
+				<div className='md:w-2/5 w-5/6 m-auto'>
+					<h1 className='md:text-5xl text-3xl text-green-300 font-semibold text-center p-5 md:p-10'>About & Rules</h1>
 					<div className='text-md text-slate-200'>
 						<p>The <span className='font-bold text-green-300'>A to Z Fill Challenge</span> is a challenge where you play champions in order from A to Z while queueing up your position as fill for the entire season. This challenge forces you to get out of your comfort zone and devise creative ways to win games.</p>
 					</div>

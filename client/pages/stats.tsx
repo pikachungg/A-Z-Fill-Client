@@ -13,7 +13,7 @@ const Stats:NextPage = () => {
 			</Head>
 			<main className='bg-gray-900 w-screen min-h-screen'>
 				<NavBar/>
-				<div className='w-4/5 m-auto'>
+				<div className='md:w-4/5 m-auto'>
 					<CollectiveStats/>
 					<ChampionPool/>
 				</div>

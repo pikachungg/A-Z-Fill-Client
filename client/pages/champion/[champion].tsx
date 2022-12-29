@@ -82,7 +82,7 @@ const Champion:NextPage = () => {
 			</Head>
 			<main className='min-h-screen bg-gray-900'>
 				<NavBar/>
-				<div className='w-3/5 m-auto'>	
+				<div className='md:w-3/5 md:m-auto overflow-auto'>	
 					<ChampionStats img={championImg} name={championName} champinfo={championInformation}/>
 					<ChampionTable champinfo={championInformation}/>
 				</div>
