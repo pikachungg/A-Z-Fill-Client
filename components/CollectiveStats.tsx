@@ -1,5 +1,18 @@
 
 import { FC, useState, useEffect } from 'react'
+import axios from 'axios';
+
+interface TotalStats{
+	wins: number,
+	loss: number,
+	totalgames: number,
+	winrate: number
+}
+
+interface MostPlayed{
+	position: string,
+	amountplayed: number
+}
 
 const CollectiveStats:FC = () => {
 
@@ -7,10 +20,25 @@ const CollectiveStats:FC = () => {
 
 	const [wonGames, setWonGames] = useState<number>(0)
 	const [lostGames, setLostGames] = useState<number>(0)
-	const [mostPlayedRole, setMostPlayedRole] = useState<string>("temp")
+	const [winrate, setWinrate] = useState<number>(0)
+	const [mostPlayedRole, setMostPlayedRole] = useState<string>("None")
 
 	useEffect( () => {
-		//Here goes data fetching
+
+		axios.get('http://azapi-env.eba-p85m38pz.us-east-1.elasticbeanstalk.com/totalstats')
+			.then( res => {
+				let data: TotalStats = res.data
+				setWonGames( Number(data.wins) )
+				setLostGames( Number(data.loss) ) 
+				setWinrate( Number(data.winrate) )
+			})
+
+		axios.get('http://azapi-env.eba-p85m38pz.us-east-1.elasticbeanstalk.com/mostplayedposition')
+			.then( res => {
+				let data: MostPlayed = res.data
+				setMostPlayedRole( data.position )
+			})
+		
 	}, [])
 
 
@@ -18,14 +46,13 @@ const CollectiveStats:FC = () => {
 		let stat = ""
 		switch(index){
 			case 0:
-				stat = (wonGames + lostGames).toString()
+				stat = `${wonGames + lostGames}`
 				break
 			case 1:
 				stat = `${wonGames.toString()} / ${lostGames.toString()}`
 				break
 			case 2:
-				let winrate = (wonGames * 100) / (wonGames + lostGames) 
-				stat = `${Math.ceil(winrate).toString()}`
+				stat = `${winrate}`
 				break
 			case 3: 
 				stat = mostPlayedRole

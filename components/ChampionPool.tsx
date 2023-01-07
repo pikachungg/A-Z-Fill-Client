@@ -12,7 +12,7 @@ const ChampionPool:FC = () => {
 
 	const [currentPatch, setCurrentPatch] = useState<string>("12.23.1")
 	const [splashes, setSplashes] = useState<ChampionObject[]>([])
-
+	
 	useEffect( () => {
 		getCurrentPatch()
 		getChampions()
