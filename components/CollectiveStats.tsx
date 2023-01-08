@@ -21,7 +21,7 @@ const CollectiveStats:FC = () => {
 	const [wonGames, setWonGames] = useState<number>(0)
 	const [lostGames, setLostGames] = useState<number>(0)
 	const [winrate, setWinrate] = useState<number>(0)
-	const [mostPlayedRole, setMostPlayedRole] = useState<string>("None")
+	const [mostPlayedRole, setMostPlayedRole] = useState<string>("")
 
 	useEffect( () => {
 
