@@ -8,18 +8,19 @@ import ChampionStats from '../../components/ChampionStats'
 import ChampionTable from '../../components/ChampionTable'
 
 interface Match{
-	date: string
-	position: string
-	result: string
-	kills: string
-	deaths: string
-	assists: string
+	matchid: number
+	position: number
+	result: number
+	kills: number
+	deaths: number
+	assists: number
+	screenshot: string
 }
 
 interface ChampionInformation{
-	championid: string
 	wins: number
 	loss: number
+	winrate: number
 	matchhistory: Match[]
 }
 
@@ -27,13 +28,12 @@ const Champion:NextPage = () => {
 	const router = useRouter()
 	const { asPath } = router
 
-
 	const [currentPatch, setCurrentPatch] = useState<string>("12.23.1")
 	const [championid, setChampionid] = useState<string>("")
 	const [championName, setChampionName] = useState<string>("")
 	const [championImg, setChampionImg] = useState<string>("") 
 
-	const [championInformation, setChampionInformation] = useState<ChampionInformation>({championid: "K'Sante", wins: 10, loss: 20, matchhistory: [{date: '12/23/2022', position: 'Support', result: 'Win', kills: '10', deaths: '5', assists: '20'}]})
+	const [championInformation, setChampionInformation] = useState<ChampionInformation>({wins: 0, loss: 0, winrate: 0, matchhistory: []})
 
 	useEffect( () => {
 		if (router.isReady){
@@ -45,6 +45,18 @@ const Champion:NextPage = () => {
 	useEffect( () => {
 		getChampionImg()
 		getChampionInformation()
+	}, [championid])
+
+	useEffect( () => {
+		if (championid !== ""){
+			axios.get(`http://azapi-env.eba-p85m38pz.us-east-1.elasticbeanstalk.com/champion/${championid}`)
+			.then( res => {
+				let data = res.data
+				if (data.matchhistory.length > 0){
+					setChampionInformation(data)
+				}
+			})
+		}
 	}, [championid])
 	
 	const getCurrentPatch = ():void => {
@@ -83,7 +95,7 @@ const Champion:NextPage = () => {
 			<main className='min-h-screen bg-gray-900'>
 				<NavBar/>
 				<div className='md:w-3/5 md:m-auto overflow-auto'>	
-					<ChampionStats img={championImg} name={championName} champinfo={championInformation}/>
+					<ChampionStats img={championImg} name={championName} wins={championInformation.wins} loss={championInformation.loss} winrate={championInformation.winrate}/>
 					<ChampionTable champinfo={championInformation}/>
 				</div>
 			</main>
