@@ -48,8 +48,14 @@ const Champion:NextPage = () => {
 	}, [championid])
 
 	useEffect( () => {
+		const config = {
+			headers:{
+				'Access-Control-Allow-Origin': '*',
+				'Content-Type': 'application/json',
+			}
+		}
 		if (championid !== ""){
-			axios.get(`http://azapi-env.eba-p85m38pz.us-east-1.elasticbeanstalk.com/champion/${championid}`)
+			axios.get(`http://azapi-env.eba-p85m38pz.us-east-1.elasticbeanstalk.com/champion/${championid}`, config)
 			.then( res => {
 				let data = res.data
 				if (data.matchhistory.length > 0){
