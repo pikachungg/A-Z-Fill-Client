@@ -10,6 +10,7 @@ const Stats:NextPage = () => {
 		<>
 			<Head>
 				<title>Statistics</title>
+				<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"></meta>
 			</Head>
 			<main className='bg-gray-900 w-screen min-h-screen'>
 				<NavBar/>
