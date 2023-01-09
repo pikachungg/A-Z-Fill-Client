@@ -34,7 +34,7 @@ const Insert:NextPage = () => {
 	}
 
 	const getCurrentPatch = ():void => {
-		axios.get('https://ddragon.leagueoflegends.com/api/versions.json')
+		axios.get('http://ddragon.leagueoflegends.com/api/versions.json')
 			.then(res => {
 				let versionArray:string[] = res.data
 				setCurrentPatch(versionArray[0])
@@ -42,7 +42,7 @@ const Insert:NextPage = () => {
 	}
 
 	const getChampions = ():void => {
-		axios.get(`https://ddragon.leagueoflegends.com/cdn/${currentPatch}/data/en_US/champion.json`)
+		axios.get(`http://ddragon.leagueoflegends.com/cdn/${currentPatch}/data/en_US/champion.json`)
 			.then(res => {
 				let champs:Object = res.data.data
 				let keys:string[] = Object.keys(champs)

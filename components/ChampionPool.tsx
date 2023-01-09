@@ -19,7 +19,7 @@ const ChampionPool:FC = () => {
 	},[currentPatch])
 
 	const getCurrentPatch = ():void => {
-		axios.get('https://ddragon.leagueoflegends.com/api/versions.json')
+		axios.get('http://ddragon.leagueoflegends.com/api/versions.json')
 			.then(res => {
 				let versionArray:string[] = res.data
 				setCurrentPatch(versionArray[0])
@@ -27,14 +27,14 @@ const ChampionPool:FC = () => {
 	}
 
 	const getChampions = ():void => {
-		axios.get(`https://ddragon.leagueoflegends.com/cdn/${currentPatch}/data/en_US/champion.json`)
+		axios.get(`http://ddragon.leagueoflegends.com/cdn/${currentPatch}/data/en_US/champion.json`)
 			.then(res => {
 				let champs:Object = res.data.data
 				let keys:string[] = Object.keys(champs)
 				let squareImg:ChampionObject[] = keys.map( x => {
 					return {
 						championid: x,
-						img: `https://ddragon.leagueoflegends.com/cdn/${currentPatch}/img/champion/${x}.png`
+						img: `http://ddragon.leagueoflegends.com/cdn/${currentPatch}/img/champion/${x}.png`
 					}
 				})
 				setSplashes(squareImg)
