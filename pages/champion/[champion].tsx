@@ -48,14 +48,8 @@ const Champion:NextPage = () => {
 	}, [championid])
 
 	useEffect( () => {
-		const config = {
-			headers:{
-				'Access-Control-Allow-Origin': '*',
-				'Content-Type': 'application/json',
-			}
-		}
 		if (championid !== ""){
-			axios.get(`http://azapi-env.eba-p85m38pz.us-east-1.elasticbeanstalk.com/champion/${championid}`, config)
+			axios.get(`http://azapi-env.eba-p85m38pz.us-east-1.elasticbeanstalk.com/champion/${championid}`)
 			.then( res => {
 				let data = res.data
 				if (data.matchhistory.length > 0){
@@ -66,7 +60,7 @@ const Champion:NextPage = () => {
 	}, [championid])
 	
 	const getCurrentPatch = ():void => {
-		axios.get('https://ddragon.leagueoflegends.com/api/versions.json')
+		axios.get('http://ddragon.leagueoflegends.com/api/versions.json')
 			.then(res => {
 				let versionArray:string[] = res.data
 				setCurrentPatch(versionArray[0])
