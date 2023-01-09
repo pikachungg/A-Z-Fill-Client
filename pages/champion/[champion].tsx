@@ -55,7 +55,7 @@ const Champion:NextPage = () => {
 			}
 		}
 		if (championid !== ""){
-			axios.get(`http://azapi-env.eba-p85m38pz.us-east-1.elasticbeanstalk.com/champion/${championid}`, config)
+			axios.get(`https://azapi-env.eba-p85m38pz.us-east-1.elasticbeanstalk.com/champion/${championid}`, config)
 			.then( res => {
 				let data = res.data
 				if (data.matchhistory.length > 0){
@@ -79,7 +79,7 @@ const Champion:NextPage = () => {
 
 	const getChampionInformation = ():void => {
 		if (championid.length > 0){
-			axios.get(`http://ddragon.leagueoflegends.com/cdn/${currentPatch}/data/en_US/champion/${championid}.json`)
+			axios.get(`https://ddragon.leagueoflegends.com/cdn/${currentPatch}/data/en_US/champion/${championid}.json`)
 			.then(res => {
 				let data:any = res.data.data
 				setChampionName(data[championid].name)	
@@ -89,7 +89,7 @@ const Champion:NextPage = () => {
 
 	const getChampionImg = (): void => {
 		if (championid.length > 0){
-			setChampionImg(`http://ddragon.leagueoflegends.com/cdn/${currentPatch}/img/champion/${championid}.png`)
+			setChampionImg(`https://ddragon.leagueoflegends.com/cdn/${currentPatch}/img/champion/${championid}.png`)
 		}
 	}
 
