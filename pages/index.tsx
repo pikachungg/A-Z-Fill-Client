@@ -17,7 +17,6 @@ const Home:NextPage = () => {
 			<Head>
 				<title>A to Z Fill Challenge</title>
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
-				<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"></meta>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<main>

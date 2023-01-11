@@ -91,7 +91,6 @@ const Champion:NextPage = () => {
 		<>
 			<Head>
 				<title>Shapeless | {championName} Stats</title>
-				<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"></meta>
 			</Head>
 			<main className='min-h-screen bg-gray-900'>
 				<NavBar/>
