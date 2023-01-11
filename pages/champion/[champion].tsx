@@ -49,7 +49,7 @@ const Champion:NextPage = () => {
 
 	useEffect( () => {
 		if (championid !== ""){
-			axios.get(`http://azapi-env-1.eba-b2eytatt.us-east-1.elasticbeanstalk.com/champion/${championid}`)
+			axios.get(`https://a-z-fill-api-production.up.railway.app/champion/${championid}`)
 			.then( res => {
 				let data = res.data
 				if (data.matchhistory.length > 0){
@@ -60,7 +60,7 @@ const Champion:NextPage = () => {
 	}, [championid])
 	
 	const getCurrentPatch = ():void => {
-		axios.get('http://ddragon.leagueoflegends.com/api/versions.json')
+		axios.get('https://ddragon.leagueoflegends.com/api/versions.json')
 			.then(res => {
 				let versionArray:string[] = res.data
 				setCurrentPatch(versionArray[0])
@@ -73,7 +73,7 @@ const Champion:NextPage = () => {
 
 	const getChampionInformation = ():void => {
 		if (championid.length > 0){
-			axios.get(`http://ddragon.leagueoflegends.com/cdn/${currentPatch}/data/en_US/champion/${championid}.json`)
+			axios.get(`https://ddragon.leagueoflegends.com/cdn/${currentPatch}/data/en_US/champion/${championid}.json`)
 			.then(res => {
 				let data:any = res.data.data
 				setChampionName(data[championid].name)	
@@ -83,7 +83,7 @@ const Champion:NextPage = () => {
 
 	const getChampionImg = (): void => {
 		if (championid.length > 0){
-			setChampionImg(`http://ddragon.leagueoflegends.com/cdn/${currentPatch}/img/champion/${championid}.png`)
+			setChampionImg(`https://ddragon.leagueoflegends.com/cdn/${currentPatch}/img/champion/${championid}.png`)
 		}
 	}
 
