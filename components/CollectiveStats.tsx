@@ -25,7 +25,7 @@ const CollectiveStats:FC = () => {
 
 	useEffect( () => {
 
-		axios.get('http://azapi-env.eba-p85m38pz.us-east-1.elasticbeanstalk.com/totalstats')
+		axios.get('http://azapi-env-1.eba-b2eytatt.us-east-1.elasticbeanstalk.com/totalstats')
 			.then( res => {
 				let data: TotalStats = res.data
 				setWonGames( Number(data.wins) )
@@ -33,7 +33,7 @@ const CollectiveStats:FC = () => {
 				setWinrate( Number(data.winrate) )
 			})
 
-		axios.get('http://azapi-env.eba-p85m38pz.us-east-1.elasticbeanstalk.com/mostplayedposition')
+		axios.get('http://azapi-env-1.eba-b2eytatt.us-east-1.elasticbeanstalk.com/mostplayedposition')
 			.then( res => {
 				let data: MostPlayed = res.data
 				setMostPlayedRole( data.position )

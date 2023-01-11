@@ -49,7 +49,7 @@ const Champion:NextPage = () => {
 
 	useEffect( () => {
 		if (championid !== ""){
-			axios.get(`http://azapi-env.eba-p85m38pz.us-east-1.elasticbeanstalk.com/champion/${championid}`)
+			axios.get(`http://azapi-env-1.eba-b2eytatt.us-east-1.elasticbeanstalk.com/champion/${championid}`)
 			.then( res => {
 				let data = res.data
 				if (data.matchhistory.length > 0){
